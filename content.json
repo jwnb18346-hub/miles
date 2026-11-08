@@ -1,0 +1,208 @@
+{
+  "name": "MILES",
+  "owner": "朱先生",
+  "email": "pfrzjw666@qq.com",
+  "location": "深圳",
+  "intro": "我是 MILES，AI 视频创作者。从人物、产品和场景资产出发，把想法推进成镜头，再通过剪辑连成故事。关注产品质感、人物连续性，也关注每一帧里的情绪。",
+  "enIntro": "I'm MILES, an AI video creator based in Shenzhen. I work from character, product and scene assets through to moving images and editing — with a focus on texture, continuity and emotion.",
+  "projects": [
+    {
+      "slug": "jewelry",
+      "title": "珠宝产品质感",
+      "enTitle": "Emerald, in motion.",
+      "category": "product",
+      "tags": [
+        "产品视觉",
+        "光影控制",
+        "动态生成"
+      ],
+      "enTags": [
+        "PRODUCT VISUAL",
+        "LIGHT & TEXTURE",
+        "AI VIDEO"
+      ],
+      "year": "2026",
+      "format": "16:9 · 1280×720",
+      "duration": "00:15",
+      "video": "media/jewelry.mp4",
+      "poster": "assets/poster-jewelry.jpg",
+      "description": "祖母绿戒指暗场短片。从产品资产到动态镜头，重点控制宝石颜色、金属结构、光影与镜头连续性。",
+      "enDescription": "An emerald ring in a dark setting. From product assets to moving images, with attention to gemstone color, metal structure, lighting and continuity.",
+      "scope": "资产整理、动态生成、剪辑与成片",
+      "enScope": "Asset preparation, AI video generation & editing",
+      "assets": [
+        "assets/jewelry-asset-sheet.jpg",
+        "assets/jewelry-asset-02-sheet.jpg",
+        "assets/jewelry-asset-01.jpg",
+        "assets/jewelry-asset-02.jpg"
+      ],
+      "captions": [
+        "祖母绿戒指 / 三视角资产",
+        "珐琅手镯 / 产品资产",
+        "戒指 / 视觉资产",
+        "手镯 / 视觉资产"
+      ]
+    },
+    {
+      "slug": "digital-human",
+      "title": "数字人叙事",
+      "enTitle": "A character after dark.",
+      "category": "narrative",
+      "tags": [
+        "人物资产",
+        "四视图",
+        "连续性"
+      ],
+      "enTags": [
+        "DIGITAL HUMAN",
+        "CHARACTER SHEET",
+        "CONTINUITY"
+      ],
+      "year": "2026",
+      "format": "16:9",
+      "duration": "00:29",
+      "video": "media/digital-human.mp4",
+      "poster": "assets/poster-digital-human.jpg",
+      "description": "围绕同一数字角色展开夜景叙事，现有素材包含成片、人物资产图与四视图。",
+      "enDescription": "A nighttime narrative built around a single digital character, accompanied by character assets and a four-view reference sheet.",
+      "scope": "人物资产、动态生成与剪辑",
+      "enScope": "Character assets, AI video generation & editing",
+      "assets": [
+        "assets/digital-human-asset-02.jpg",
+        "assets/digital-human-asset-01.jpg"
+      ],
+      "captions": [
+        "人物资产图",
+        "人物四视图"
+      ]
+    },
+    {
+      "slug": "ecommerce",
+      "title": "AI 电商口播",
+      "enTitle": "Made for the small screen.",
+      "category": "product",
+      "tags": [
+        "电商口播",
+        "商品展示",
+        "竖屏"
+      ],
+      "enTags": [
+        "E-COMMERCE",
+        "PRODUCT DEMO",
+        "VERTICAL VIDEO"
+      ],
+      "year": "2026",
+      "format": "9:16 · 720×1274",
+      "duration": "00:30",
+      "video": "media/ecommerce.mp4",
+      "poster": "assets/poster-ecommerce.jpg",
+      "description": "面向移动端观看的产品演示，使用竖屏构图保留展示动作与商品细节。",
+      "enDescription": "A vertical product demonstration made for mobile viewing, keeping performance and product details in frame.",
+      "scope": "人物与产品资产、生成与剪辑",
+      "enScope": "Character & product assets, generation & editing",
+      "assets": [
+        "assets/ecommerce-asset-01.jpg",
+        "assets/ecommerce-asset-02.jpg"
+      ],
+      "captions": [
+        "电商口播 / 人物资产",
+        "电商口播 / 产品资产"
+      ]
+    },
+    {
+      "slug": "emotion",
+      "title": "情感叙事短片",
+      "enTitle": "Somewhere in the rain.",
+      "category": "narrative",
+      "tags": [
+        "情绪叙事",
+        "场景氛围",
+        "人物动作"
+      ],
+      "enTags": [
+        "SHORT NARRATIVE",
+        "ATMOSPHERE",
+        "PERFORMANCE"
+      ],
+      "year": "2026",
+      "format": "16:9",
+      "duration": "00:11",
+      "video": "media/emotion.mp4",
+      "poster": "assets/poster-emotion.jpg",
+      "description": "以雨夜车站候车场景和人物动作为核心，在短时长内完成情绪建立。",
+      "enDescription": "A rainy-night station and a character waiting. A short study in atmosphere, movement and emotion.",
+      "scope": "场景氛围、人物动作与短叙事",
+      "enScope": "Atmosphere, character movement & short narrative",
+      "assets": [
+        "assets/poster-emotion.jpg"
+      ],
+      "captions": [
+        "雨夜车站 / 场景氛围静帧"
+      ]
+    },
+    {
+      "slug": "characters",
+      "title": "游戏角色视觉开发",
+      "enTitle": "Characters, imagined.",
+      "category": "visual",
+      "tags": [
+        "角色设定",
+        "画风探索",
+        "视觉资产"
+      ],
+      "enTags": [
+        "CHARACTER DESIGN",
+        "VISUAL DEVELOPMENT",
+        "AI ART"
+      ],
+      "year": "2026",
+      "format": "静态视觉资产",
+      "duration": "02 ASSETS",
+      "video": "",
+      "poster": "assets/game-asset-01.jpg",
+      "description": "两组游戏人物视觉探索，展示角色方向、造型与整体画风。",
+      "enDescription": "Two visual explorations of game characters, studying direction, shape language and overall style.",
+      "scope": "2 组角色设定图（无成片）",
+      "enScope": "Two character design assets (still images)",
+      "assets": [
+        "assets/game-asset-01.jpg",
+        "assets/game-asset-02.jpg"
+      ],
+      "captions": [
+        "角色探索 / 01",
+        "角色探索 / 02"
+      ]
+    },
+    {
+      "slug": "showreel",
+      "title": "Showreel",
+      "enTitle": "A little bit of everything.",
+      "category": "reel",
+      "tags": [
+        "商业视觉",
+        "人物",
+        "混剪"
+      ],
+      "enTags": [
+        "SELECTED WORKS",
+        "CHARACTER",
+        "EDITING"
+      ],
+      "year": "2026",
+      "format": "16:9 · 960×540",
+      "duration": "00:50",
+      "video": "media/showreel-540.mp4",
+      "poster": "assets/poster-showreel.jpg",
+      "description": "把现有作品集中为一条 50 秒混剪，作为作品集的整体观看入口。",
+      "enDescription": "A 50-second edit bringing the existing work together: product visuals, characters and narrative.",
+      "scope": "混剪成片 1 条",
+      "enScope": "One edited showreel",
+      "assets": [
+        "assets/poster-showreel.jpg"
+      ],
+      "captions": [
+        "Showreel / 成片静帧"
+      ]
+    }
+  ]
+}

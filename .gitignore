@@ -1,1 +1,4 @@
 .DS_Store
+.local-backups/
+*.log
+preview-check.html

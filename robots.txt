@@ -1,4 +1,4 @@
-Sitemap: https://jwnb18346-hub.github.io/miles-ai-video-portfolio/sitemap.xml
-
 User-agent: *
 Allow: /
+Disallow: /admin/
+Sitemap: https://jwnb18346-hub.github.io/miles/sitemap.xml
