@@ -47,3 +47,8 @@
 .album-cover{transition:transform 850ms cubic-bezier(.22,1,.36,1),opacity 120ms}.album.open .album-cover{opacity:0;pointer-events:none;transition:transform 850ms cubic-bezier(.22,1,.36,1),opacity 180ms 580ms}
 
 @media(prefers-reduced-motion:reduce){.reference-rail{overflow-x:auto;cursor:auto}.reference-rail .rail-track{transform:none!important}}
+
+.album-cover{transform:none;z-index:3;perspective:1400px;overflow:visible}.album-cover-view{position:absolute;inset:0;display:block;transform-style:preserve-3d;transform-origin:left center;transform:translate3d(0,0,30px) rotateY(18deg) rotateZ(1deg);transition:transform 850ms cubic-bezier(.22,1,.36,1);pointer-events:none}.album-cover-view *{pointer-events:none}.album.open .album-cover{transform:none}.album.open .album-cover-view{transform:translate3d(227.5px,0,16px) rotateY(-178deg)}
+@media(max-width:760px){.album.open .album-cover-view{transform:translate3d(140px,0,16px) rotateY(-178deg)}}
+@media(max-width:480px){.album.open .album-cover-view{transform:translate3d(113px,0,12px) rotateY(-178deg)}}
+@media(prefers-reduced-motion:reduce){.album-cover-view{transition:none!important}}
