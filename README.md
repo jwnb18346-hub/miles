@@ -23,7 +23,7 @@ node server.mjs
 node build.mjs
 ```
 
-content.json 为内容源，build.mjs 生成首页、work、about、studio 和六个案例页，以及 sitemap.xml / robots.txt / 404.html。直接改生成的 HTML 会在下一次构建时被覆盖。字体为自托管 Barlow Condensed，许可见 fonts/OFL.txt；没有使用参考站的字体文件或美术资源。
+content.json 为内容源，build.mjs 生成首页、work、about、studio 和六个案例页，以及 sitemap.xml / robots.txt / 404.html。直接改生成的 HTML 会在下一次构建时被覆盖。大字字体为自托管 Anton，许可见 fonts/Anton-OFL.txt；另保留第一版的 Barlow Condensed 及其许可 fonts/OFL.txt；没有使用参考站的字体文件或美术资源。
 
 ## 发布
 
@@ -32,6 +32,10 @@ content.json 为内容源，build.mjs 生成首页、work、about、studio 和�
 ## 参考与边界
 
 公开视觉与交互参考：https://www.kenjilambert.com/
-参考站公开脚本路径及页面请求表明它使用 Next.js；私有管理后台和服务端源码没有获取，也不声称已复刻。实现了黑底奶油色大字、红蓝点缀、四角导航、可拖动的二维工作证、横向作品图带、搜索分类、案例页、语言切换、图片放大与资产翻页。未复制参考站的 WebGL 三维挂绳模拟或其完整动画系统。
+参考站公开脚本路径及页面请求表明它使用 Next.js；私有管理后台和服务端源码没有获取，也不声称已复刻。实现了黑底奶油色大字、红蓝点缀、四角导航、可拖动的 CSS 三维卡片与弹性绳带、固定画面随滚动推进的作品区与可拖动循环图带、搜索分类、案例页、语言切换、图片放大与 CSS 三维作品册开合、资产翻页。首屏按参考站实测尺寸修正。原站使用 Three.js/WebGL，本站使用独立编写的 SVG 绳带、CSS 三维变换和弹簧运动，未声称引擎、私有后台或全部动画系统完全相同。
 
 GitHub Pages 的静态托管说明：https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
+
+## 本机服务
+
+当前登录期间已通过 launchctl 运行本机内容服务，标签 com.miles.portfolio.local。它不需要保持聊天执行窗口。若下次登录未启动，可在本目录执行 node server.mjs。需要停止本机服务时执行 launchctl remove com.miles.portfolio.local。未设置机器人自动工作任务。
