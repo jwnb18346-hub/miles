@@ -2,3 +2,4 @@
 .local-backups/
 *.log
 preview-check.html
+node_modules/
