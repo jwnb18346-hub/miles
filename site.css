@@ -45,3 +45,5 @@
 @media(min-width:761px){.ticker-intro{padding-top:156px}.album-cover{transform:translate3d(0,0,30px) rotateY(18deg) rotateZ(1deg)}.album-stage{margin-top:7px}}
 
 .album-cover{transition:transform 850ms cubic-bezier(.22,1,.36,1),opacity 120ms}.album.open .album-cover{opacity:0;pointer-events:none;transition:transform 850ms cubic-bezier(.22,1,.36,1),opacity 180ms 580ms}
+
+@media(prefers-reduced-motion:reduce){.reference-rail{overflow-x:auto;cursor:auto}.reference-rail .rail-track{transform:none!important}}
