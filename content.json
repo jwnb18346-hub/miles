@@ -3,8 +3,8 @@
   "owner": "朱先生",
   "email": "pfrzjw666@qq.com",
   "location": "深圳",
-  "intro": "我是 MILES，AI 视频创作者。从人物、产品和场景资产出发，把想法推进成镜头，再通过剪辑连成故事。关注产品质感、人物连续性，也关注每一帧里的情绪。",
-  "enIntro": "I'm MILES, an AI video creator based in Shenzhen. I work from character, product and scene assets through to moving images and editing — with a focus on texture, continuity and emotion.",
+  "intro": "我是 MILES，一名游走于 创意与技术 之间的独立创作者。\n\n用 AI 构建影像，用 代码 实现产品，让想法从概念走向现实。\n\n从人物、场景与故事，到 Web 开发、系统集成与内容运营，我持续探索不同形式的数字创作。\n\n曾参与 抖音、微信视频号 内容制作，作品单条播放量 40 万+。\n\n不止于创作，也致力于实现。",
+  "enIntro": "I'm MILES, an independent creator working between creativity and technology.\n\nI build moving images with AI and products with code, bringing ideas from concept into reality.\n\nFrom characters, scenes and stories to web development, systems integration and content operations, I explore different forms of digital creation.\n\nI've contributed to content for Douyin and WeChat Channels, with individual works reaching 400,000+ views.\n\nBeyond creating, I make things happen.",
   "projects": [
     {
       "slug": "jewelry",
@@ -203,6 +203,122 @@
       "captions": [
         "Showreel / 成片静帧"
       ]
+    },
+    {
+      "slug": "realistic-emotion",
+      "title": "仿真人情感视频",
+      "enTitle": "Realistic emotional storytelling",
+      "category": "realistic",
+      "tags": [
+        "仿真人情感视频"
+      ],
+      "enTags": [
+        "Realistic emotional storytelling"
+      ],
+      "year": "2026",
+      "format": "16:9 · 1920×1080",
+      "duration": "00:35",
+      "video": "media/realistic-emotion.mp4",
+      "poster": "assets/poster-realistic-emotion.jpg",
+      "description": "仿真人情感视频作品。",
+      "enDescription": "A realistic emotional storytelling video.",
+      "scope": "视频作品展示",
+      "enScope": "Video showcase",
+      "assets": [
+        "assets/poster-realistic-emotion.jpg"
+      ],
+      "captions": [
+        "成片抽帧"
+      ],
+      "portrait": false,
+      "webOptimized": true
+    },
+    {
+      "slug": "white-model",
+      "title": "白模视频",
+      "enTitle": "White-model animation",
+      "category": "white-model",
+      "tags": [
+        "白模视频"
+      ],
+      "enTags": [
+        "White-model animation"
+      ],
+      "year": "2026",
+      "format": "16:9 · 1920×1080",
+      "duration": "00:08",
+      "video": "media/white-model.mp4",
+      "poster": "assets/poster-white-model.jpg",
+      "description": "白模视频作品。",
+      "enDescription": "A white-model animation study.",
+      "scope": "视频作品展示",
+      "enScope": "Video showcase",
+      "assets": [
+        "assets/poster-white-model.jpg"
+      ],
+      "captions": [
+        "成片抽帧"
+      ],
+      "portrait": false,
+      "webOptimized": true
+    },
+    {
+      "slug": "vibe-awards",
+      "title": "vibe 视频大赏",
+      "enTitle": "Vibe video showcase",
+      "category": "vibe",
+      "tags": [
+        "vibe 视频大赏"
+      ],
+      "enTags": [
+        "Vibe video showcase"
+      ],
+      "year": "2026",
+      "format": "9:16 · 720×1280",
+      "duration": "00:12",
+      "video": "media/vibe-awards.mp4",
+      "poster": "assets/poster-vibe-awards.jpg",
+      "description": "竖屏 vibe 视频作品；原素材无音轨。",
+      "enDescription": "A vertical vibe video. The supplied source has no audio track.",
+      "scope": "视频作品展示",
+      "enScope": "Video showcase",
+      "assets": [
+        "assets/poster-vibe-awards.jpg"
+      ],
+      "captions": [
+        "成片抽帧"
+      ],
+      "portrait": true,
+      "webOptimized": true
+    },
+    {
+      "slug": "not-sad-mv",
+      "title": "我不难过 · MV 二创",
+      "enTitle": "Not Sad · MV reinterpretation",
+      "category": "mv",
+      "tags": [
+        "MV 二创"
+      ],
+      "enTags": [
+        "Not Sad · MV reinterpretation"
+      ],
+      "year": "2026",
+      "format": "16:9 · 1920×1080",
+      "duration": "00:30",
+      "video": "media/not-sad-mv.mp4",
+      "poster": "assets/poster-not-sad-mv.jpg",
+      "description": "《我不难过》副歌 30 秒 MV 二创，7–21 秒为清唱段。",
+      "enDescription": "A 30-second chorus MV reinterpretation, with an a cappella passage from 7 to 21 seconds.",
+      "scope": "视频作品展示",
+      "enScope": "Video showcase",
+      "assets": [
+        "assets/poster-not-sad-mv.jpg"
+      ],
+      "captions": [
+        "成片抽帧"
+      ],
+      "portrait": false,
+      "webOptimized": true
     }
   ]
 }

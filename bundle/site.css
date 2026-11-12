@@ -309,3 +309,11 @@ html.no-webgl-book .book-list{display:grid;margin-top:0}
 @media(min-width:768px){html.no-webgl-book .book-list{grid-template-columns:repeat(4,1fr)}}
 
 @media(prefers-reduced-motion:reduce){.hero-word{opacity:1;animation:none}.mq-track,.strip-track,.scroll-hint,.site-loader svg{animation:none}.reveal{opacity:1;filter:none;transform:none;transition:none}}
+
+/* Expanded personal introduction; existing palette and motion retained. */
+.intro-body.intro-expanded{max-width:54ch;font-size:clamp(18px,min(2.3vw,3.2vh),30px);line-height:1.4;letter-spacing:-.015em;color:var(--cream,#f1eec0)}
+.intro-expanded p{margin:0 0 .55em}.intro-expanded p:last-child{margin-bottom:0}
+.intro-skills{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 24px;margin-top:18px;color:#35a5d2;font-size:clamp(15px,1.5vw,20px)}
+.about-expanded p{margin:0 0 .7em}
+@media(max-width:639px){.intro-body.intro-expanded{max-width:100%;font-size:18px;line-height:1.38}.intro-skills{margin-top:12px;gap:8px 18px}.intro-center{padding:56px 24px 110px}.intro-expanded p{margin-bottom:.5em}}
+@media(max-height:620px){.intro:has(.intro-expanded){height:auto;min-height:140vh}.intro:has(.intro-expanded) .intro-sticky{position:relative;height:auto;min-height:100vh}.intro:has(.intro-expanded) .intro-center{position:relative;padding:100px 24px 140px}}
