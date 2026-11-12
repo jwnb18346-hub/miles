@@ -225,10 +225,14 @@
       "scope": "视频作品展示",
       "enScope": "Video showcase",
       "assets": [
-        "assets/poster-realistic-emotion.jpg"
+        "assets/realistic-emotion-still-01.jpg",
+        "assets/realistic-emotion-still-02.jpg",
+        "assets/realistic-emotion-still-03.jpg"
       ],
       "captions": [
-        "成片抽帧"
+        "成片静帧 / 01",
+        "成片静帧 / 02",
+        "成片静帧 / 03"
       ],
       "portrait": false,
       "webOptimized": true
@@ -254,10 +258,14 @@
       "scope": "视频作品展示",
       "enScope": "Video showcase",
       "assets": [
-        "assets/poster-white-model.jpg"
+        "assets/white-model-still-01.jpg",
+        "assets/white-model-still-02.jpg",
+        "assets/white-model-still-03.jpg"
       ],
       "captions": [
-        "成片抽帧"
+        "成片静帧 / 01",
+        "成片静帧 / 02",
+        "成片静帧 / 03"
       ],
       "portrait": false,
       "webOptimized": true
@@ -283,10 +291,14 @@
       "scope": "视频作品展示",
       "enScope": "Video showcase",
       "assets": [
-        "assets/poster-vibe-awards.jpg"
+        "assets/vibe-awards-still-01.jpg",
+        "assets/vibe-awards-still-02.jpg",
+        "assets/vibe-awards-still-03.jpg"
       ],
       "captions": [
-        "成片抽帧"
+        "成片静帧 / 01",
+        "成片静帧 / 02",
+        "成片静帧 / 03"
       ],
       "portrait": true,
       "webOptimized": true
@@ -314,10 +326,14 @@
       "scope": "视频作品展示",
       "enScope": "Video showcase",
       "assets": [
-        "assets/poster-not-sad-mv.jpg"
+        "assets/not-sad-mv-still-01.jpg",
+        "assets/not-sad-mv-still-02.jpg",
+        "assets/not-sad-mv-still-03.jpg"
       ],
       "captions": [
-        "成片抽帧"
+        "成片静帧 / 01",
+        "成片静帧 / 02",
+        "成片静帧 / 03"
       ],
       "portrait": false,
       "webOptimized": true
@@ -345,10 +361,14 @@
       "scope": "视频作品展示",
       "enScope": "Video showcase",
       "assets": [
-        "assets/poster-october-27.jpg"
+        "assets/october-27-still-01.jpg",
+        "assets/october-27-still-02.jpg",
+        "assets/october-27-still-03.jpg"
       ],
       "captions": [
-        "成片抽帧"
+        "成片静帧 / 01",
+        "成片静帧 / 02",
+        "成片静帧 / 03"
       ],
       "portrait": false,
       "webOptimized": true
