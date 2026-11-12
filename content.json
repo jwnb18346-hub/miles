@@ -264,22 +264,22 @@
     },
     {
       "slug": "vibe-awards",
-      "title": "vibe 视频大赏",
-      "enTitle": "Vibe video showcase",
-      "category": "vibe",
+      "title": "白模视频 · 竖屏",
+      "enTitle": "White-model animation · Vertical",
+      "category": "white-model",
       "tags": [
-        "vibe 视频大赏"
+        "白模视频"
       ],
       "enTags": [
-        "Vibe video showcase"
+        "WHITE-MODEL ANIMATION"
       ],
       "year": "2026",
       "format": "9:16 · 720×1280",
       "duration": "00:12",
       "video": "media/vibe-awards.mp4",
       "poster": "assets/poster-vibe-awards.jpg",
-      "description": "竖屏 vibe 视频作品；原素材无音轨。",
-      "enDescription": "A vertical vibe video. The supplied source has no audio track.",
+      "description": "竖屏白模视频作品；原素材无音轨。",
+      "enDescription": "A vertical white-model animation. The supplied source has no audio track.",
       "scope": "视频作品展示",
       "enScope": "Video showcase",
       "assets": [
@@ -297,10 +297,12 @@
       "enTitle": "Not Sad · MV reinterpretation",
       "category": "mv",
       "tags": [
+        "vibe 视频大赏",
         "MV 二创"
       ],
       "enTags": [
-        "Not Sad · MV reinterpretation"
+        "VIBE VIDEO SHOWCASE",
+        "MV REINTERPRETATION"
       ],
       "year": "2026",
       "format": "16:9 · 1920×1080",
