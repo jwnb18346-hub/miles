@@ -5,6 +5,7 @@ import {initMarquees, initReveal, initCursor, initNavPaint, initTransitions, ini
 import {initHero, initIntro, initFeatures} from './home.js';
 import {initWork, initMedia, initStudio} from './pages.js';
 import {mountRibbon} from './ribbon.js';
+import {initMotionControls} from './motion.js';
 
 function initRig() {
   const host = document.querySelector('[data-rig]');
@@ -25,6 +26,7 @@ function initRig() {
 }
 
 initLang();
+initMotionControls();
 initWords();
 startBus();
 initMarquees();

@@ -308,7 +308,13 @@ html.no-webgl-book .book-stage{display:none}
 html.no-webgl-book .book-list{display:grid;margin-top:0}
 @media(min-width:768px){html.no-webgl-book .book-list{grid-template-columns:repeat(4,1fr)}}
 
-@media(prefers-reduced-motion:reduce){.hero-word{opacity:1;animation:none}.mq-track,.strip-track,.scroll-hint,.site-loader svg{animation:none}.reveal{opacity:1;filter:none;transform:none;transition:none}}
+html[data-motion="reduce"] .hero-word{opacity:1;animation:none}
+html[data-motion="reduce"] :is(.mq-track,.strip-track,.scroll-hint,.site-loader svg){animation:none}
+html[data-motion="reduce"] .reveal{opacity:1;filter:none;transform:none;transition:none}
+@media(prefers-reduced-motion:reduce){html:not([data-motion="full"]) .hero-word{opacity:1;animation:none}html:not([data-motion="full"]) .mq-track,html:not([data-motion="full"]) .strip-track,html:not([data-motion="full"]) .scroll-hint,html:not([data-motion="full"]) .site-loader svg{animation:none}html:not([data-motion="full"]) .reveal{opacity:1;filter:none;transform:none;transition:none}}
+.motion-settings{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 12px;padding:24px 18px 110px;font-size:12px;color:var(--cream)}
+.motion-settings button{padding:10px 6px;min-height:44px;touch-action:manipulation;border-bottom:1px solid transparent}
+.motion-settings button[aria-pressed="true"]{border-bottom-color:currentColor}
 
 /* Expanded personal introduction; existing palette and motion retained. */
 .intro-body.intro-expanded{max-width:54ch;font-size:clamp(18px,min(2.3vw,3.2vh),30px);line-height:1.4;letter-spacing:-.015em;color:var(--cream,#f1eec0)}

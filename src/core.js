@@ -7,7 +7,9 @@ const VELOCITY_DIVISOR = 60, VELOCITY_SMOOTH = .18, VELOCITY_EPS = .0005;
 export const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 export const range = (x, a, b) => clamp((x - a) / (b - a), 0, 1);
 export const eio = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-export const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+export const reduced = document.documentElement.dataset.motion
+  ? document.documentElement.dataset.motion === 'reduce'
+  : matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const PH = {DRIVER: 0, SCENE: 10, CONSUMER: 20, OVERLAY: 30};
 
 export function panelStage(rect, vh) {

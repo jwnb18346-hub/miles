@@ -39,23 +39,24 @@ export function mountRibbon(host) {
     return () => { host.innerHTML = ''; host.classList.remove('ribbon-host'); };
   }
   let drag = false, vx = 0, vy = 0, lastM = {x: 0, y: 0, t: 0}, flip = 0, spin = 0, push = 0, inView = true;
-  const down = e => { drag = true; try { tag.setPointerCapture(e.pointerId); } catch {} tag.style.cursor = 'grabbing'; lastM = {x: e.clientX, y: e.clientY, t: performance.now()}; e.preventDefault(); };
+  let activePointer = null;
+  const down = e => { if (activePointer !== null || e.button > 0) return; activePointer = e.pointerId; drag = true; vx = vy = 0; try { tag.setPointerCapture(e.pointerId); } catch {} tag.style.cursor = 'grabbing'; lastM = {x: e.clientX, y: e.clientY, t: performance.now()}; e.preventDefault(); };
   const move = e => {
-    if (!drag) return;
+    if (!drag || e.pointerId !== activePointer) return;
     const r = host.getBoundingClientRect(), end = P[POINTS - 1];
     end.x = e.clientX - r.left; end.y = e.clientY - r.top;
     const now = performance.now(), d = Math.max(8, now - lastM.t);
     vx = (e.clientX - lastM.x) / d * 16; vy = (e.clientY - lastM.y) / d * 16;
     lastM = {x: e.clientX, y: e.clientY, t: now};
   };
-  const up = e => { if (!drag) return; drag = false; tag.style.cursor = 'grab'; const end = P[POINTS - 1]; end.px = end.x - vx / 16; end.py = end.y - vy / 16; try { tag.releasePointerCapture(e.pointerId); } catch {} };
+  const up = e => { if (!drag || e.pointerId !== activePointer) return; drag = false; activePointer = null; tag.style.cursor = 'grab'; const end = P[POINTS - 1]; end.px = end.x - vx / 16; end.py = end.y - vy / 16; try { tag.releasePointerCapture(e.pointerId); } catch {} };
   const near = e => {
     if (drag) return;
     const r = host.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, m = P[POINTS >> 1];
     const d = Math.hypot(x - m.x, y - m.y);
     if (d <= PUSH_R) push += Math.sign(x - m.x) * (1 - d / PUSH_R) * .7;
   };
-  if (!matchMedia('(pointer: coarse)').matches) tag.addEventListener('pointerdown', down);
+  tag.addEventListener('pointerdown', down);
   addEventListener('pointermove', move, {passive: true});
   addEventListener('pointerup', up, {passive: true});
   addEventListener('pointercancel', up, {passive: true});
