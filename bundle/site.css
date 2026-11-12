@@ -240,7 +240,7 @@ html.wipe-in .page-wipe{transform:translate3d(0,0,0)}
 .case-title{position:absolute;left:0;right:0;bottom:0;padding:0 var(--px) calc(var(--nav-bottom) + clamp(16px,3vh,34px));will-change:transform,opacity;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .case-title h1{font-family:var(--font-ui);font-size:clamp(26px,3.6vw,58px);font-weight:500;line-height:1.05;letter-spacing:-.02em;max-width:18ch;color:var(--cream)}
 .case-info{position:relative;z-index:10;background:var(--background);padding:clamp(64px,15vh,150px) var(--px)}
-.case-grid{display:grid;grid-template-columns:1fr;column-gap:clamp(24px,6vw,90px);row-gap:40px}
+.case-grid{display:grid;grid-template-columns:minmax(0,1fr);column-gap:clamp(24px,6vw,90px);row-gap:40px}
 @media(min-width:768px){.case-grid{grid-template-columns:clamp(80px,11vw,150px) 1fr}.case-grid>.label-sm{padding-top:12px}}
 .case-lead{font-size:clamp(17px,2.1vw,30px);line-height:1.35;letter-spacing:-.025em;max-width:38ch}
 @media(min-width:640px){.case-lead{max-width:48ch}}@media(min-width:768px){.case-lead{max-width:58ch}}
