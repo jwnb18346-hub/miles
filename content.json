@@ -319,6 +319,37 @@
       ],
       "portrait": false,
       "webOptimized": true
+    },
+    {
+      "slug": "october-27",
+      "title": "东方神话 · 天宫对峙",
+      "enTitle": "Eastern mythology · Celestial standoff",
+      "category": "fantasy",
+      "tags": [
+        "东方神话",
+        "场景氛围"
+      ],
+      "enTags": [
+        "EASTERN MYTHOLOGY",
+        "ATMOSPHERE"
+      ],
+      "year": "2026",
+      "format": "16:9 · 1920×1080",
+      "duration": "00:27",
+      "video": "media/october-27.mp4",
+      "poster": "assets/poster-october-27.jpg",
+      "description": "披甲角色面对云海天宫与列阵人群，呈现东方神话场景的对峙氛围。",
+      "enDescription": "An armored figure faces a celestial palace and assembled ranks above the clouds in an Eastern mythological scene.",
+      "scope": "视频作品展示",
+      "enScope": "Video showcase",
+      "assets": [
+        "assets/poster-october-27.jpg"
+      ],
+      "captions": [
+        "成片抽帧"
+      ],
+      "portrait": false,
+      "webOptimized": true
     }
   ]
 }

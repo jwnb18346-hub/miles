@@ -7,7 +7,7 @@ import esbuild from 'esbuild';
 /* ---------- 可调参数 ---------- */
 const DEFAULT_LANG = 'en';                 // 'en' 或 'zh'，改这一行即可切回中文默认
 const origin = 'https://jwnb18346-hub.github.io/miles/';
-const FEATURED = [6, 7, 8, 9, 0, 1, 2, 3, 5];          // 首页展示的作品（content.json 序号）
+const FEATURED = [6, 7, 8, 9, 10, 0, 1, 2, 3, 5];          // 首页展示的作品（content.json 序号）
 const STRIP = ['AI VIDEO', 'VISUAL DEVELOPMENT', 'CHARACTER', 'PRODUCT', 'EDITING'];
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -72,7 +72,7 @@ function home() {
 <section class="home-foot"><div class="home-foot-top"><div class="elsewhere"><p class="label-sm">Elsewhere</p><ul><li><a href="mailto:${esc(D.email)}">Mail ↗</a></li><li><a href="resume.pdf">Résumé ↗</a></li><li><a href="work/">Work ↗</a></li></ul></div><div><a class="contact-link" href="about/#contact">${tr('联系页面', 'Contact page')}&nbsp;→</a> <a class="pill pill-blue shadow talk-mobile" href="mailto:${esc(D.email)}">${tr('聊一聊', 'let’s talk')}&nbsp;↗</a></div></div>${marquee(esc(D.email.toUpperCase()), {size: 'mega', star: 'red', flush: true, light: true, overlay: `<a class="pill pill-blue shadow talk-desktop" href="mailto:${esc(D.email)}">${tr('聊一聊', 'let’s talk')}&nbsp;↗</a>`})}</section>`;
 }
 function work() {
-  const filters = [['all', '全部', 'ALL'], ['product', '产品', 'PRODUCT'], ['narrative', '叙事', 'NARRATIVE'], ['visual', '视觉资产', 'VISUAL'], ['reel', '混剪', 'REEL'], ['realistic', '仿真人情感', 'REALISTIC'], ['white-model', '白模', 'WHITE MODEL'], ['vibe', 'vibe 视频大赏', 'VIBE'], ['mv', 'MV 二创', 'MV']];
+  const filters = [['all', '全部', 'ALL'], ['product', '产品', 'PRODUCT'], ['narrative', '叙事', 'NARRATIVE'], ['visual', '视觉资产', 'VISUAL'], ['reel', '混剪', 'REEL'], ['realistic', '仿真人情感', 'REALISTIC'], ['white-model', '白模', 'WHITE MODEL'], ['vibe', 'vibe 视频大赏', 'VIBE'], ['mv', 'MV 二创', 'MV'], ['fantasy', '东方神话', 'MYTHOLOGY']];
   return `<div class="page-pad work-page"><div class="work-title">${marquee('work', {size: 'huge', star: 'red', tag: 'h1'})}</div><div class="work-controls"><label class="search-label"><span class="sr-only">${cur('搜索作品', 'Search projects')}</span><input id="search" type="search" name="search" autocomplete="off" data-lang-attr="placeholder" ${attr('placeholder', '搜索作品', 'Search projects')}></label><button type="button" class="filter-toggle" aria-expanded="false" aria-controls="filters">${tr('筛选', 'FILTERS')} <span data-sign aria-hidden="true">+</span></button></div><div class="filters" id="filters" hidden>${filters.map(([id, zh, en]) => `<button type="button" data-filter="${id}" aria-pressed="${id === 'all'}">${tr(zh, en)}</button>`).join('')}</div><p class="result-count" role="status" aria-live="polite">${D.projects.length} / ${D.projects.length}</p><div class="card-grid" data-work-grid>${D.projects.map(p => `<article class="reveal" data-category="${p.category}" data-search="${esc([p.title, p.enTitle, ...p.tags, ...p.enTags, p.description, p.enDescription].join(' ').toLowerCase())}">${card(p)}</article>`).join('')}</div><p class="empty" hidden>${tr('没有匹配的作品，换个关键词试试。', 'No projects found. Try another search.')}</p></div>`;
 }
 function comparison() {
