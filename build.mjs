@@ -6,11 +6,13 @@ import esbuild from 'esbuild';
 
 /* ---------- 可调参数 ---------- */
 const DEFAULT_LANG = 'zh';                 // 'en' 或 'zh'，改这一行即可切回中文默认
-const origin = 'https://jwnb18346-hub.github.io/miles/';
+const origin = process.env.MILES_SITE_ORIGIN || 'https://jwnb18346-hub.github.io/miles/';
 const FEATURED = [6, 7, 8, 9, 10, 0, 1, 2, 3, 5];          // 首页展示的作品（content.json 序号）
 const STRIP = ['AI VIDEO', 'VISUAL DEVELOPMENT', 'CHARACTER', 'PRODUCT', 'EDITING'];
 
 const root = path.dirname(fileURLToPath(import.meta.url));
+// 默认构建仍供 GitHub Pages 使用；Pages 构建写入独立目录。
+const outputRoot = process.env.MILES_OUTPUT_DIR || root;
 const D = JSON.parse(readFileSync(path.join(root, 'content.json'), 'utf8'));
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const cur = (zh, en) => DEFAULT_LANG === 'zh' ? zh : en;
@@ -115,7 +117,7 @@ function shell(page, body, route = '', title = '') {
   return `<!doctype html><html lang="${DEFAULT_LANG === 'zh' ? 'zh-CN' : 'en'}" data-lang="${DEFAULT_LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a0a0a"><base href="${base}"><title>${esc(fullTitle)}</title><meta name="description" content="${esc(D.name)}（${esc(D.owner)}）的 AI 视频与视觉作品：珠宝产品、数字人、情感叙事、游戏角色与 Showreel。"><link rel="canonical" href="${origin + route}"><meta property="og:title" content="${esc(title || `${D.name} — AI 视频创作`)}"><meta property="og:type" content="website"><meta property="og:image" content="${origin}assets/poster-showreel.jpg"><meta property="og:url" content="${origin + route}"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="preload" href="fonts/anton.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="bundle/site.css?v=motion-1"><script>${motionBoot}${boot}</script><noscript><style>.site-loader{display:none}.reveal,.hero-word,.feature-copy{opacity:1!important;filter:none!important;transform:none!important;animation:none!important}</style></noscript><script type="module" src="bundle/main.js?v=motion-1"></script></head><body id="top" data-page="${page}"><div class="site-loader" aria-hidden="true">${LOGO}</div><div class="page-wipe" aria-hidden="true"></div><span class="cursor-dot" aria-hidden="true"></span>${header(page)}<main id="main">${body}</main>${motionSettings}<dialog id="lightbox"><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></dialog></body></html>`;
 }
 const pages = [['', shell('home', home())], ['work/', shell('work', work(), 'work/', '作品')], ['about/', shell('about', about(), 'about/', '关于')], ['studio/', shell('studio', studio(), 'studio/', '工作室')], ...D.projects.map(p => [`work/${p.slug}/`, shell('case', casePage(p), `work/${p.slug}/`, p.title)])];
-for (const [route, html] of pages) { const dir = path.join(root, route); mkdirSync(dir, {recursive: true}); writeFileSync(path.join(dir, 'index.html'), html); }
+for (const [route, html] of pages) { const dir = path.join(outputRoot, route); mkdirSync(dir, {recursive: true}); writeFileSync(path.join(dir, 'index.html'), html); }
 
 /* ---------- 字体 ---------- */
 const nm = path.join(root, 'node_modules');
@@ -128,17 +130,18 @@ const fonts = [
   ['@fontsource-variable/archivo/LICENSE', 'archivo-OFL.txt'],
   ['@fontsource/instrument-serif/LICENSE', 'instrument-serif-OFL.txt'],
 ];
-for (const [from, to] of fonts) copyFileSync(path.join(nm, from), path.join(root, 'fonts', to));
+mkdirSync(path.join(outputRoot, 'fonts'), {recursive: true});
+for (const [from, to] of fonts) copyFileSync(path.join(nm, from), path.join(outputRoot, 'fonts', to));
 
 /* ---------- 打包 ---------- */
-const out = path.join(root, 'bundle');
+const out = path.join(outputRoot, 'bundle');
 // 保留旧版本生成的 chunk，供仍缓存旧入口的浏览器使用。
 mkdirSync(out, {recursive: true});
 await esbuild.build({entryPoints: [path.join(root, 'src/main.js')], bundle: true, splitting: true, format: 'esm', target: 'es2022', minify: true, outdir: out, chunkNames: 'chunk-[hash]', legalComments: 'none', logLevel: 'warning'});
 copyFileSync(path.join(root, 'src/site.css'), path.join(out, 'site.css'));
 
-writeFileSync(path.join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map(([p]) => `<url><loc>${origin + p}</loc></url>`).join('')}</urlset>\n`);
-writeFileSync(path.join(root, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /admin/\nSitemap: ${origin}sitemap.xml\n`);
-writeFileSync(path.join(root, '404.html'), `<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>404 — ${esc(D.name)}</title><body style="background:#0a0a0a;color:#f1eec0;font:20px sans-serif;padding:12vh 8vw"><h1 style="font-size:80px">Lost in a frame.</h1><p>这个画面还不存在。</p><a style="color:#35a5d2" href="${origin}">返回 ${esc(D.name)} 首页 ↗</a></body></html>`);
-writeFileSync(path.join(root, 'favicon.svg'), '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0a0a0a"/><path fill="#35a5d2" d="M10 48V16h8l14 20 14-20h8v32h-9V31L32 49 19 31v17z"/></svg>');
+writeFileSync(path.join(outputRoot, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map(([p]) => `<url><loc>${origin + p}</loc></url>`).join('')}</urlset>\n`);
+writeFileSync(path.join(outputRoot, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /admin/\nSitemap: ${origin}sitemap.xml\n`);
+writeFileSync(path.join(outputRoot, '404.html'), `<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>404 — ${esc(D.name)}</title><body style="background:#0a0a0a;color:#f1eec0;font:20px sans-serif;padding:12vh 8vw"><h1 style="font-size:80px">Lost in a frame.</h1><p>这个画面还不存在。</p><a style="color:#35a5d2" href="${origin}">返回 ${esc(D.name)} 首页 ↗</a></body></html>`);
+writeFileSync(path.join(outputRoot, 'favicon.svg'), '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0a0a0a"/><path fill="#35a5d2" d="M10 48V16h8l14 20 14-20h8v32h-9V31L32 49 19 31v17z"/></svg>');
 console.log(`Built ${pages.length} pages for ${D.name}. Default language: ${DEFAULT_LANG}. Original media left untouched.`);

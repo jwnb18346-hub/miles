@@ -3,3 +3,5 @@
 *.log
 preview-check.html
 node_modules/
+dist/
+.pages-build-*/

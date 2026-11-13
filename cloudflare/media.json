@@ -1,0 +1,11 @@
+{
+  "description": "Cloudflare 专用副本；根目录 media 保留 GitHub Pages 原素材。",
+  "sha256": {
+    "media/october-27.mp4": "fc56f5af7f576d46bc42055ca44ed385ffe98670aa854c29304d99b63e8d0d89",
+    "cloudflare/media/october-27.mp4": "016591ff49d7d851dd63b93fcbfc7dc81c5274b8f571e9a600db04454e827282"
+  },
+  "bytes": {
+    "media/october-27.mp4": 64025787,
+    "cloudflare/media/october-27.mp4": 24290274
+  }
+}

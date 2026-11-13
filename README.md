@@ -1,5 +1,7 @@
 # MILES 本地重做版
 
+Cloudflare Pages 的免费 `pages.dev` 部署配置、构建命令和视频兼容处理见 [CLOUDFLARE_PAGES.md](CLOUDFLARE_PAGES.md)。GitHub Pages 继续保留。
+
 分支 `kenji-rebuild`，基于 `7df5336972d90cfd4ae79cd809cd45b05c6d7ff5`。本轮没有 push、部署或修改 Pages 设置。
 
 ## 本地运行
